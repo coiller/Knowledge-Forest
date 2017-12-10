@@ -35,8 +35,25 @@ a {
 }
 
 #tab-con {
-    color: #666666;
-    height: 30vw;
+    background:url("../image/contact.jpg");
+    background-size: cover;
+    height: 34vw;
+}
+
+.contact-us {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction:row;
+}
+.con {
+    padding-top: 6vw;
+    font-family:serif;
+    font-size: 1.5vw;
+    color: white;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .tabs,.slide {

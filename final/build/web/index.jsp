@@ -27,7 +27,12 @@
             <section class="slide" id="tab-ins">
             </section>
             <section class="slide" id="tab-con">
-                <h1>contract us</h1>
+                <div class="contact-us">
+                    <ul class="con">
+                        <li>Knowledge Forest Project Team</li>
+                        <li>yus77@pitt.edu</li>
+                    </ul>
+                </div>
             </section>
         </main>
     </body>
