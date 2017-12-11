@@ -15,6 +15,10 @@
         <!-- Search and result box-->
         <nav id="slide-menu">
             <!-- result of search -->
+            <form method="POST" action="search" target="video-list">            
+                <div class="search">
+                    <input type="search" name="query" placeholder="Search whatever you want to know about" />
+                </div></form>
             <iframe src="search.jsp" name = "video-list" style="text-align:center" class="iframe1" width="100%" frameborder="0"></iframe>
         </nav>
         <!-- Content panel -->
@@ -31,7 +35,7 @@
                     </div>
                 </header>
                 <iframe src="pdfjs-1/web/viewer.html" name = "pdf" style="text-align:center" class="iframe1" width="100%" height="1000" frameborder="0"></iframe>
-                
+
             </div>
         </div>
     </body>

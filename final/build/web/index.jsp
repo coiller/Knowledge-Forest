@@ -17,7 +17,7 @@
             <a class="tab" href="signup.jsp">SIGN UP</a>
             <a class="tab" href="login.jsp">LOGIN</a>
             <a class="tab" href="read.jsp">Example</a>
-            <a class="tab" href="#tab-con">CONTRACT</a>
+            <a class="tab" href="#tab-con">CONTACT</a>
         </div>
         <section class="tabs" id="tab-about">
             <h1>KNOWLEDGE FOREST</h1>

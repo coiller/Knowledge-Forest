@@ -46,6 +46,8 @@ public class search extends HttpServlet {
             Path.resultData=this.getServletContext().getRealPath("/data/result.txt");
             QueryMain q = new QueryMain();           
             ArrayList<String> url=(ArrayList<String>) q.search(query);
+            if (url==null)
+                url=new ArrayList<String>();
             //url = new ArrayList<>(Arrays.asList("https://www.youtube.com/embed/pFUKeD3FJm8?rel=0", "https://www.youtube.com/embed/ba-CB6wVuvQ?rel=0", "https://www.youtube.com/embed/CF3lFPW4E1o?rel=0"));
             request.setAttribute("video_url", url);
             RequestDispatcher rd = request.getRequestDispatcher("/search.jsp");

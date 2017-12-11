@@ -42,8 +42,8 @@ public class QueryRetrieval {
             fields = new String[]{"TITLE","DESCRIPTION","TAGS","SUBTITLES"};
             boosts = new HashMap<>();
             boosts.put("TITLE",8.0f);
-            boosts.put("DESCRIPTION",6.0f);
-            boosts.put("TAGS",4.0f);
+            boosts.put("DESCRIPTION",4.0f);
+            boosts.put("TAGS",6.0f);
             boosts.put("SUBTITLES",2.0f);
 
     }

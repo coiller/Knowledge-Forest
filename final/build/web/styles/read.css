@@ -128,10 +128,10 @@ body.menu-active div#content .menu-trigger {
 search bar
 */
 
-.search {
+/*.search {
   padding-top:2%;
   padding-bottom: 5%
-}
+}*/
 .search input {
   width: 100%;
   border-bottom:2px solid #ccc;
