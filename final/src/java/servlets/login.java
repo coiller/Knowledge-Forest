@@ -5,13 +5,13 @@
  */
 package servlets;
 
+import Classes.Database;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -41,10 +41,13 @@ public class login extends HttpServlet {
     private PreparedStatement ps;
     private ResultSet rs;
     private MessageDigest md;
+    private Connection conn;
+    private Database db;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        db = new Database();
         try (PrintWriter out = response.getWriter()) {
             //get paremeter values
             String username = request.getParameter("username");
@@ -58,8 +61,7 @@ public class login extends HttpServlet {
                 System.out.println("MD5 failed ! " + ex);
             }
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/final", "final", "final");
+                conn = db.getCon();
                 ps = conn.prepareStatement("select * from users where userName=? and password=?");
                 ps.setString(1, username);
                 ps.setString(2, password);

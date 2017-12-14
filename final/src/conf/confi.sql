@@ -30,3 +30,4 @@ time DATETIME NOT NULL UNIQUE,
 pdfID INT NOT NULL,
 page INT NOT NULL 
 );
+GRANT ALL PRIVILEGES ON final To 'final'@'localhost' IDENTIFIED BY 'final';

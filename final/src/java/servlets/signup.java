@@ -5,6 +5,7 @@
  */
 package servlets;
 
+import Classes.Database;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigInteger;
@@ -38,21 +39,22 @@ public class signup extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    private Database db;
     private Connection conn;
     private PreparedStatement ps;
     private ResultSet rs;
     private MessageDigest md;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException,ClassNotFoundException, SQLException {
+            throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String userName = request.getParameter("username");
             boolean exist = false;
+            db = new Database();
             //check if name is existed 
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/final", "final", "final");
+                conn = db.getCon();
                 ps = conn.prepareStatement("select userName from users where userName=?");
                 ps.setString(1, userName);
                 //find name
@@ -65,7 +67,7 @@ public class signup extends HttpServlet {
             }
             if (exist) {
                 //existed
-                request.setAttribute("signup_fail","Sorry the username is already existed.");
+                request.setAttribute("signup_fail", "Sorry the username is already existed.");
                 RequestDispatcher rd = request.getRequestDispatcher("/signup.jsp");
                 rd.include(request, response);
                 return;
@@ -83,16 +85,17 @@ public class signup extends HttpServlet {
             try {
                 String sql;
                 sql = "insert into users (userName,password) values (?,?)";
-                ps=conn.prepareStatement(sql);
-                ps.setString(1,userName);
-                ps.setString(2,password);
-                ps.executeUpdate();
-                sql = "insert into userinfo (email) values (?)";
-                ps=conn.prepareStatement(sql);
-                ps.setString(1,email);
-                ps.executeUpdate();
+                conn = db.getCon();
+                ps = conn.prepareStatement(sql);
+                ps.setString(1, userName);
+                ps.setString(2, password);
+                ps.execute();
+                sql = "insert into userInfo (email) values (?)";
+                ps = conn.prepareStatement(sql);
+                ps.setString(1, email);
+                ps.execute();
                 ps.close();
-                User u=new User(userName,email);
+                User u = new User(userName, email);
                 request.getSession().setAttribute("user", u);
                 RequestDispatcher rd = request.getRequestDispatcher("/read.jsp");
                 rd.include(request, response);
