@@ -12,7 +12,7 @@
   - Yue, Sun <YUS77@pitt.edu>;
   - Yuhui, Wu <YUW119@pitt.edu>;
   - Zhou, Junyu <JUZ36@pitt.edu>;
-    - Xiao, Zhaomin <ZHX36@pitt.edu>;
+  - Xiao, Zhaomin <ZHX36@pitt.edu>;
 
 
 - ###Description
