@@ -11,27 +11,27 @@
   - Xiao, Zhaomin <ZHX36@pitt.edu>;
 
 
-- ###Description
+- ### Description
 
   ​	Our web site is an online learning system with reading material and searching engine.
 
   ​	You can sign up and login to our system. Then, you can enjoy the reading and search the terms you confused about at the search panel.
 
-- ###Environment
+- ### Environment
 
-  - ####Java JDK 1.8.0
+  - #### Java JDK 1.8.0
 
-  - ####Tomcat8  
+  - #### Tomcat8  
 
-  - ####MySQL  
+  - #### MySQL  
 
-- ###Techs  
+- ### Techs  
 
-  ####Web  
+  - #### Web  
 
     ​	In building this system, we used Tomcat8 as our HTTP server. Using Java servlets to handle the HTTP requests send from users' browsers, and sent JSP back. In addition, we used MYSQL database to save users' information.
 
-  ####Information Retrieval
+  - #### Information Retrieval
 
     ​	For search engine, we write a crawler to crawling the information of videos on YouTube relate to our reading material. Then, we cleaned and standardized the information. Next, we indexed our collection by using Apache Lucene. Comparing to searching directly on YouTube, our search engine focused on reading material related videos. Besides, our search engine is a multi-field engine which means we search not only in titles, but also in subtitles, descriptions, etc.
 
