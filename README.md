@@ -35,7 +35,11 @@
 
     ​	For search engine, we write a crawler to crawling the information of videos on YouTube relate to our reading material. Then, we cleaned and standardized the information. Next, we indexed our collection by using Apache Lucene. Comparing to searching directly on YouTube, our search engine focused on reading material related videos. Besides, our search engine is a multi-field engine which means we search not only in titles, but also in subtitles, descriptions, etc.
 
-  ### Hope you enjoy our learning system!
+![](https://github.com/coiller/Knowledge-Forest/blob/master/homepage.png)
+
+![](https://github.com/coiller/Knowledge-Forest/blob/master/intro.jpg)    
+  
+## Hope you enjoy our learning system!  
 
   Yue Sun 12/13/2017
 
